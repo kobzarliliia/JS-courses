@@ -1,7 +1,10 @@
 const length = parseInt(prompt("Введіть будь ласка довжину у сантіметрах", ""));
 
-const lengthInMeters = Math.floor(length / 100);
-const lengthInKilometers = Math.floor(length / 100000);
+const COUNT_CM_IN_METERS = 100;
+const COUNT_METERS_IN_KM = 100000;
+
+const lengthInMeters = Math.floor(length / COUNT_CM_IN_METERS);
+const lengthInKilometers = Math.floor(length / COUNT_METERS_IN_KM);
 
 document.write(`
     У ${length} см ${lengthInMeters} м.</br>

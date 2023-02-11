@@ -1,29 +1,26 @@
 const firstPrice = parseFloat(
     prompt("Введіть будь ласка ціну першого товару", "")
 );
-const firstQuantity = parseInt(
+const firstQuantity = parseFloat(
     prompt("Введіть будь ласка кількість першого товару", "")
 );
 const secondPrice = parseFloat(
     prompt("Введіть будь ласка ціну другого товару", "")
 );
-const secondQuantity = parseInt(
+const secondQuantity = parseFloat(
     prompt("Введіть будь ласка кількість другого товару", "")
 );
 const thirdPrice = parseFloat(
     prompt("Введіть будь ласка ціну третього товару", "")
 );
-const thirdQuantity = parseInt(
+const thirdQuantity = parseFloat(
     prompt("Введіть будь ласка кількість третього товару", "")
 );
 
-const firstTotalCost = (firstPrice * firstQuantity).toFixed(2);
-const secondTotalCost = (secondPrice * secondQuantity).toFixed(2);
-const thirdTotalCost = (thirdPrice * thirdQuantity).toFixed(2);
-const totalCost =
-    parseInt(firstTotalCost) +
-    parseInt(secondTotalCost) +
-    parseInt(thirdTotalCost);
+const firstTotalCost = firstPrice * firstQuantity;
+const secondTotalCost = secondPrice * secondQuantity;
+const thirdTotalCost = thirdPrice * thirdQuantity;
+const totalCost = firstTotalCost + secondTotalCost + thirdTotalCost;
 const totalQuality = firstQuantity + secondQuantity + thirdQuantity;
 
 document.write(
@@ -33,36 +30,36 @@ document.write(
                 <tr>
                     <th>Товар</th>
                     <th>Кількість</th>
-                    <th>Ціна</th>
-                    <th>Вартість</th>
+                    <th>Ціна, грн</th>
+                    <th>Вартість, грн</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>${firstQuantity}</td>
-                    <td>${firstPrice}</td>
-                    <td>${firstTotalCost}</td>
+                    <td>${firstQuantity.toFixed(2).replace(/\.0+/, "")}</td>
+                    <td>${firstPrice.toFixed(2)}</td>
+                    <td>${firstTotalCost.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>${secondQuantity}</td>
-                    <td>${secondPrice}</td>
-                    <td>${secondTotalCost}</td>
+                    <td>${secondQuantity.toFixed(2).replace(/\.0+/, "")}</td>
+                    <td>${secondPrice.toFixed(2)}</td>
+                    <td>${secondTotalCost.toFixed(2)}</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>${thirdQuantity}</td>
-                    <td>${thirdPrice}</td>
-                    <td>${thirdTotalCost}</td>
+                    <td>${thirdQuantity.toFixed(2).replace(/\.0+/, "")}</td>
+                    <td>${thirdPrice.toFixed(2)}</td>
+                    <td>${thirdTotalCost.toFixed(2)}</td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <td>Загальна вартість</td>
-                    <td>${totalQuality}</td>
+                    <td>${totalQuality.toFixed(2).replace(/\.0+/, "")}</td>
                     <td>-</td>
-                    <td>${totalCost}</td>
+                    <td>${totalCost.toFixed(2)}</td>
                 </tr>
             </tfoot>
         </table>

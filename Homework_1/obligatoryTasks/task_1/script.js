@@ -6,8 +6,8 @@ const secondNumber = parseFloat(
 );
 
 const sumOfNumbers = firstNumber + secondNumber;
-const multiplicationOfNumbers = (firstNumber * secondNumber).toFixed(2);
-const divisionOfNumbers = (firstNumber / secondNumber).toFixed(2);
+const multiplicationOfNumbers = firstNumber * secondNumber;
+const divisionOfNumbers = firstNumber / secondNumber;
 
 document.write(
     `
@@ -25,11 +25,11 @@ document.write(
                 </tr>
                 <tr>
                     <td>Добуток чисел</td>
-                    <td>${multiplicationOfNumbers}</td>
+                    <td>${multiplicationOfNumbers.toFixed(2).replace(/\.0+/, "")}</td>
                 </tr>
                 <tr>
                     <td>Частка чисел</td>
-                    <td>${divisionOfNumbers}</td>
+                    <td>${divisionOfNumbers.toFixed(2).replace(/\.0+/, "")}</td>
                 </tr>
             </tbody>
         </table>
