@@ -4,19 +4,18 @@
 
 const productPrice = parseFloat(
     prompt("Введіть будь ласка ціну товару, який вас цікавить", "")
-);
+)
 const moneyAmount = parseFloat(
     prompt("Введіть будь ласка яка кількість грошей у вас зараз є", "")
-);
+)
+const ticketPrice = 4
 
 if (productPrice > moneyAmount)
     document.write(
         "Вибачте, але вам не вистачає коштів для покупки даного товару."
-    );
-else if (moneyAmount - productPrice >= 4)
+    )
+else if (moneyAmount - productPrice >= ticketPrice)
     document.write(
         "Вітаємо, ви можете придбати цей товар! Окрім цього в можете придбати лотерейний квиток за 4 грн і випробувати свою вдачу."
-    );
-else {
-    document.write("Вітаємо, ви можете придбати цей товар!");
-}
+    )
+else document.write("Вітаємо, ви можете придбати цей товар!")
