@@ -7,7 +7,6 @@ const studentAge = 18;
 const workerAge = 24;
 const retiredAge = 60;
 
-
 if (userAge < pupilAge) document.write("Ви дитина у садочку.")
 else if (userAge >= pupilAge && userAge < studentAge) document.write("Ви школяр.")
 else if (userAge >= studentAge && userAge < workerAge) document.write("Ви студент.")
