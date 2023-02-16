@@ -7,6 +7,7 @@ let nameOfSeason
 switch (indexOfDay) {
     case "1":
     case "2":
+    case "12":
         nameOfSeason = "Зима"
         break
     case "3":
@@ -23,9 +24,6 @@ switch (indexOfDay) {
     case "10":
     case "11":
         nameOfSeason = "Осінь"
-        break
-    case "12":
-        nameOfSeason = "Зима"
         break
     default:
         nameOfSeason = "Невірні дані."
