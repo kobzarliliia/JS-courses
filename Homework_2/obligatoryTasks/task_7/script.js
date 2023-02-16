@@ -1,10 +1,10 @@
 //З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься.
 
-const month = parseInt(prompt("Напишіть будь ласка номер місяця.", ""))
+const month = prompt("Напишіть будь ласка номер місяця.", "")
 
 let nameOfSeason
 
-switch (indexOfDay) {
+switch (month) {
     case "1":
     case "2":
     case "12":
