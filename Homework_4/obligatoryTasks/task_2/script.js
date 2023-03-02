@@ -1,26 +1,8 @@
 // Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей
 // день робочим.
 
-function getDayStatus(dayIndex) {
-    let dayStatus
-
-    switch (dayIndex) {
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-            dayStatus = "Робочий день"
-            break
-        case 6:
-        case 7:
-            dayStatus = "Вихідний день"
-            break
-        default:
-            dayStatus = "Номер дня може бути від 1 до 7."
-            break
-    }
-    return dayStatus
+function isWorkingDay(dayIndex) {
+    return dayIndex >= 1 && dayIndex <= 5
 }
 
 const userDayIndex = parseInt(
@@ -30,6 +12,8 @@ const userDayIndex = parseInt(
     )
 )
 
-const dayStatus = getDayStatus(userDayIndex)
+const dayStatus = isWorkingDay(userDayIndex)
+    ? "Так, це є робочий день"
+    : "Ні, це вихядний день"
 
 document.write(dayStatus)
