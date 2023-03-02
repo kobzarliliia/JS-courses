@@ -3,19 +3,21 @@
 // Кілограми у фунти;
 // Кілометри у милі.
 
-const COUNT_INCHES_IN_CANTIMETER = 0.393701,
-    COUNT_POUNDS_IN_KILOGRAM = 2.20462,
-    COUNT_MILES_IN_KILOMETER = 0.621371
-
 function getInchesFromCentimeters(num) {
+    const COUNT_INCHES_IN_CANTIMETER = 0.393701
+
     return num * COUNT_INCHES_IN_CANTIMETER
 }
 
 function getPoundsFromKilograms(num) {
+    const COUNT_POUNDS_IN_KILOGRAM = 2.20462
+
     return num * COUNT_POUNDS_IN_KILOGRAM
 }
 
 function getMilesFromKilometers(num) {
+    const COUNT_MILES_IN_KILOMETER = 0.621371
+
     return num * COUNT_MILES_IN_KILOMETER
 }
 
