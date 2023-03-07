@@ -10,6 +10,6 @@ do {
     if (isFinite(price)) priceList.push(price)
 } while (isFinite(price))
 
-const taxArray = priceList.map((item) => item * (1 - VAT_TAX_INDEX))
+const taxArray = priceList.map((item) => item * VAT_TAX_INDEX)
 
 document.write(taxArray)
