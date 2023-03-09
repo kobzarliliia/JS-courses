@@ -23,7 +23,11 @@ function getCompletedCard(numberCells, numberShips) {
     let completedCard = new Array(numberCells).fill(0)
 
     for (let i = 0; i < numberShips; i++) {
-        completedCard[getRandomNumber(0, numberCells - 1)] = 1
+        let shipIndex
+        do {
+            shipIndex = getRandomNumber(0, numberCells - 1)
+        } while (completedCard[shipIndex] === 1)
+        completedCard[shipIndex] = 1
     }
 
     return completedCard
