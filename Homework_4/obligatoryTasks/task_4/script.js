@@ -2,29 +2,43 @@
 // декілька результатів: кількість парних, кількість додатних,
 // кількість більших за 100.
 
-function getNumData() {
+function getNumData(userNumList) {
     let countEvenNum = 0,
         countPositiveNum = 0,
         countNumOver100 = 0
 
-    for (let i = 0; i < 3; i++) {
-        if (arguments[i] % 2 === 0) countEvenNum++
-        if (arguments[i] > 0) countPositiveNum++
-        if (arguments[i] > 100) countNumOver100++
+    for (let i = 0; i < userNumList.length; i++) {
+        if (userNumList[i] % 2 === 0) countEvenNum++
+        if (userNumList[i] > 0) countPositiveNum++
+        if (userNumList[i] > 100) countNumOver100++
     }
 
-    const result = `
-        Кількість парних чисел: ${countEvenNum}</br>
-        Кількість додатних чисел: ${countPositiveNum}</br>
-        Кількість чисел більших за 100: ${countNumOver100}`
-
-    return result
+    return [countEvenNum, countPositiveNum, countNumOver100]
 }
 
-const userNum1 = parseInt(prompt("Введіть будь ласка перше число", "")),
-    userNum2 = parseInt(prompt("Введіть будь ласка друге число", "")),
-    userNum3 = parseInt(prompt("Введіть будь ласка третє число", ""))
+function getUserNumbers() {
+    let userNum,
+        acc = 1
+    const userNumList = []
 
-const numData = getNumData(userNum1, userNum2, userNum3)
+    do {
+        userNum = parseInt(prompt(`Введіть будь ласка ${acc} число.`, ""))
+        if (isFinite(userNum)) {
+            userNumList.push(userNum)
+            acc++
+        }
+    } while (isFinite(userNum))
 
-document.write(numData)
+    return userNumList
+}
+
+const userNumList = getUserNumbers()
+
+const [countEvenNum, countPositiveNum, countNumOver100] =
+    getNumData(userNumList)
+
+document.write(`
+    Кількість парних чисел: ${countEvenNum}</br>
+    Кількість додатних чисел: ${countPositiveNum}</br>
+    Кількість чисел більших за 100: ${countNumOver100}
+`)
